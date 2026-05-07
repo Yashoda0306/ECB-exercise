@@ -4,7 +4,7 @@
 
 ### 1. ECB Page Chosen
 I choose following ECB Governing Council decision page: 
-[https://www.ecb.europa.eu/press/govcdec/otherdec/2026/html/ecb.gc260504~07dc9bac72.en.html]
+(https://www.ecb.europa.eu/press/press_conference/monetary-policy-statement/2026/html/ecb.is260430~f99cb123a8.en.html)
 for my analysis. 
 
 This page contains structured paragraphs which covers:
