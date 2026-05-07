@@ -20,7 +20,7 @@ nlp.add_pipe("spacytextblob")
 
 
   # Step 3: Defining URL and creating folders for storing data and outputs
-URL = "https://www.ecb.europa.eu/press/govcdec/otherdec/2026/html/ecb.gc260504~07dc9bac72.en.html"
+URL = "https://www.ecb.europa.eu/press/press_conference/monetary-policy-statement/2026/html/ecb.is260430~f99cb123a8.en.html"
 
 DATA_DIR = Path("data")
 OUTPUT_DIR = Path("outputs")
@@ -87,7 +87,7 @@ full_text = "\n\n".join(text_blocks)
 
 
 # Step 8: Saving extracted text to local file
-text_path = DATA_DIR / "ecb_govdec_2026-05-04.txt"
+text_path = DATA_DIR / "ecb_press_conference_2026-04-30.txt"
 text_path.write_text(full_text, encoding="utf-8")
 
 
@@ -114,8 +114,7 @@ sentiment_path = OUTPUT_DIR / "ecb_paragraph_sentiment.csv"
 df.to_csv(sentiment_path, index=False, encoding="utf-8")
 
 print("\nSentiment preview:")
-print(df.head())
-
+print(df)
 
 
 # Step 11: Generating word frequency counts for auto stopword detection
@@ -127,7 +126,7 @@ raw_counts = Counter(raw_tokens)
 # Step 12: Identifying frequent words as candidate stopwords
 auto_candidates = {
     word for word, count in raw_counts.items()
-    if count > 10 and len(word) <= 6
+    if count > 15 and len(word) <= 4
 }
 
 print("\nAuto-detected stopword candidates:")
@@ -146,7 +145,7 @@ custom_stopwords.update(auto_candidates)
 
 
 
-# Step 14: Tokenizing text and computing top 50 frequent meaningful words
+# Step 14: Tokenizing text and computing top 60 frequent meaningful words
 tokens = tokenize_words(full_text, custom_stopwords)
 word_counts = Counter(tokens)
 
@@ -163,7 +162,7 @@ wordcloud = WordCloud(
     height=700,
     background_color="white",
     stopwords=custom_stopwords,
-    max_words=60,
+    max_words=100,
     colormap="viridis",
     random_state=42
 ).generate(full_text)
