@@ -4,14 +4,16 @@
 
 ### 1. ECB Page Chosen
 I choose following ECB Governing Council decision page: 
-https://www.ecb.europa.eu/press/govcdec/otherdec/2026/html/ecb.gc260504~07dc9bac72.en.html 
+[https://www.ecb.europa.eu/press/govcdec/otherdec/2026/html/ecb.gc260504~07dc9bac72.en.html]
 for my analysis. 
 
 This page contains structured paragraphs which covers:
-- Monetary policy decisions  
-- Inflation outlook  
-- Economic conditions and risks  
-- Forward guidance  
+- Monetary policy decisions
+- Inflation outlook
+- Economic growth and risks
+- Financial conditions
+- Interest rates and lending
+- Forward guidance and market expectations
 
 ### 2️. Sentiment Package Used and Why 
 I used  spaCy  with the SpacyTextBlob extension for sentiment analysis.
@@ -27,26 +29,34 @@ This approach was chosen because it provides:
 
 Which improves:
 - Keyword relevance  
-- Scalability across documents  
-- Reduction of domain-specific noise  
+- Scalability across different ECB  
+- Reduction of repetitive policy-related noise  
   ##### This approach improves keyword extraction by removing both generic and ECB-specific high-frequency terms.
 
 
 ### 3️. Paragraph-Level Results & Sentiment Distribution
-- Majority of paragraphs were **Neutral** so neutral tone dominates which reflects technical and policy languange. 
-- Few are positive which reflects stability, resilience and policy support. 
-- None of them are negative which is expected due to formal central bank communication style.  
+The analysis processed 48 paragraphs from the given ECB monetary policy statement press conference
+- Majority of paragraphs were **Positive** which reflects institutional confidence, stability, and policy reassurance.
+- Few are neutral so it follows neutral tone.  
+- Mild number of paragraphs were negative which discussed: geopolitical risks, inflation pressures, economic uncertainty and market volatility.
 
-“Positive” reflects institutional wording, not emotional tone  
+The overall average sentiment score was 0.128 which indicates a generally stable and cautiously positive communication tone.
+“Positive” reflects institutional wording, not emotional tone.  
 
 ### Key Insights
-From the word frequency and word cloud analysis, the main perception includes:
--inflation and price stability
--monetary policy decisions
--economic outlook and risks
--financial conditions and interest rates
+From the word frequency and word cloud analysis, the dominant themes include:
+- inflation and price developments
+- economic growth outlook
+- energy prices and risks
+- interest rates and lending conditions
+- monetary policy decisions
+- financial market conditions
 
-The ECB consistently emphasizes maintaining inflation targets, monitoring economic risks and data-dependent policy decisions.
+The ECB consistently emphasizes:
+- maintaining price stability
+- monitoring economic and geopolitical risks
+- data-dependent monetary policy decisions
+- financial system resilience
 
 ### Sentiment Distribution
 -Added sentiment distribution visualization to better summarize paragraph-level sentiment results
